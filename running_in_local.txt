@@ -1,0 +1,10 @@
+No, it's not the script, it's the fact that your script is not executed by Python at all.
+If your script is stored in a file named script.py, you have to execute it as python script.py, 
+otherwise the default shell will execute it and it will bail out at the from keyword. (Incidentally, 
+from is the name of a command line utility which prints names of those who have sent mail to the given username, 
+so that's why it tries to access the mailboxes).
+
+Another possibility is to add the following line to the top of the script:
+
+#!/usr/bin/env python
+This will instruct your shell to execute the script via python instead of trying to interpret it on its own
